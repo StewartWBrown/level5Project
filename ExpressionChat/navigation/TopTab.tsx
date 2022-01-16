@@ -6,7 +6,8 @@ import * as React from 'react';
 import { Pressable } from 'react-native';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
+import ChatsScreen from '../screens/ChatScreen';
+import TabOneScreen from '../screens/ChatScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { TopTabParamList, RootTabScreenProps } from '../types';
 
@@ -46,7 +47,7 @@ import { TopTabParamList, RootTabScreenProps } from '../types';
          }} />
        <TopTabs.Screen
          name="Chats"
-         component={TabTwoScreen}
+         component={ChatsScreen}
          options={{
            title: 'CHATS',
          }} />
