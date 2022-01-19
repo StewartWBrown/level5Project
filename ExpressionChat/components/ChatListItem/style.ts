@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
 
     messagePreview: {
         fontSize: 16,
-        color: 'grey'
+        color: 'grey',
+        width: '100%',
     },
 
     timeRecieved: {
