@@ -4,15 +4,14 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import ChatListItem from '../components/ChatListItem';
+import chatRooms from '../dummyData/DummyChats';
+
 
 export default function ChatsScreen() {
   return (
 
     <View style={styles.container}>
-      <ChatListItem chatRoom={{lastMessage: {content: "Test"}}} />
-      <ChatListItem chatRoom={{lastMessage: {content: "Test"}}} />
-      <ChatListItem chatRoom={{lastMessage: {content: "Test"}}} />
-      <ChatListItem chatRoom={{lastMessage: {content: "Again"}}} />
+      <ChatListItem chatRoom={chatRooms[0]} />
     </View>
       
   );
