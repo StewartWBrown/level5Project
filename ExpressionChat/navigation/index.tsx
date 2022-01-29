@@ -7,7 +7,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import { ColorPropType, ColorSchemeName, View } from 'react-native';
-import { AntDesign, Entypo } from '@expo/vector-icons';
+import { AntDesign, Entypo, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 import ModalScreen from '../screens/ModalScreen';
@@ -15,6 +15,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { TopTabNavigator } from './TopTab';
+import ChatRoomScreen from '../screens/ChatRoomScreen'
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -57,6 +58,27 @@ function RootNavigator() {
         )
         
         }} />
+      <Stack.Screen 
+      name="ChatRoom" 
+      component={ChatRoomScreen} 
+      options={( {route }) => ({
+        title: route.params.name,     
+        // headerLeft: route.params.users[0].imageUri,
+        //headerBackImageSource: route.params.users[0].imageUri,
+        headerRight: () => (
+          <View style={{
+            flexDirection: 'row',
+            width: 100,
+            justifyContent:  `space-between`,
+            marginRight: 10,
+          }}>
+            <MaterialIcons name="call" size={22} color={`white`} />
+            <FontAwesome5 name="video" size={22} color={`white`} />
+            <MaterialCommunityIcons name="dots-vertical" size={22} color={`white`} />
+          </View>
+        )
+      })} /> 
+
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
