@@ -1,8 +1,9 @@
 import React from "react";
-import { Text } from 'react-native'
-
+import { FlatList, Text } from 'react-native';
+import dummyChatData from '../dummyData/DummyChatSample';
 
 import { useRoute } from "@react-navigation/native";
+import ChatMessage from "../components/ChatMessage";
 
 const ChatRoomScreen = () => {
     // Gives each chat an ID
@@ -10,8 +11,9 @@ const ChatRoomScreen = () => {
     
     
     return (
-        <Text> Chat Room </Text>
-    )
+        <FlatList data={dummyChatData.messages} renderItem={( { item } ) => <ChatMessage message={item} />} inverted />
+
+    );
 }
 
 export default ChatRoomScreen;
