@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-expressionchat-dev-180909-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349000654107:role/amplify-expressionchat-dev-180909-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349000654107:role/amplify-expressionchat-dev-180909-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-expressionchat-dev-180909-deployment",
+      "UnauthRoleName": "amplify-expressionchat-dev-180909-unauthRole",
+      "StackName": "amplify-expressionchat-dev-180909",
+      "StackId": "arn:aws:cloudformation:eu-west-2:349000654107:stack/amplify-expressionchat-dev-180909/8b469900-8f53-11ec-87a3-02783cf5a93c",
+      "AmplifyAppId": "d2gfxc7ve0ttuv"
+    }
+  }
+}
