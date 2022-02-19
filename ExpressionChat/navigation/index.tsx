@@ -48,12 +48,12 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={TopTabNavigator} options={{ 
         headerShown: true,
         // Name of app appearing at top of screen (May change down the line)
-        title: "100% real version of whatsapp",
+        title: "Glasgow Students' Nightline",
         // search picture and 3 dots
         headerRight: () => (
           <View style= {{flexDirection: 'row', width: 69, justifyContent: 'space-between', marginRight: 6}}> 
             <AntDesign name="search1" size={20} color="white" />
-            <Entypo name="dots-three-vertical" size={20} color="white" />
+            <Entypo name="log-out" size={15} color="white" />
           </View>
         )
         
