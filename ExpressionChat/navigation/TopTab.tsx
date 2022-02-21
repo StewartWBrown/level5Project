@@ -10,7 +10,7 @@ import ChatsScreen from '../screens/ChatScreen';
 import TabOneScreen from '../screens/ChatScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { TopTabParamList, RootTabScreenProps } from '../types';
-import { Auth } from 'aws-amplify';
+
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.

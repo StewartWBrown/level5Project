@@ -18,6 +18,8 @@ export type RootStackParamList = {
   Modal: undefined;
   NotFound: undefined;
   ChatRoom: ChatRoom;
+  ListOfUsers: undefined; 
+
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<

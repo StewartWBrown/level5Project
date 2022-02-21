@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "expressionchat",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Stewart\\Documents\\level5project\\ExpressionChat\\amplify\\backend\\api\\expressionchat\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authexpressionchatcc282538"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "expressionchat",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authexpressionchatcc282538",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

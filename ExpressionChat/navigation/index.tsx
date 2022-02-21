@@ -6,7 +6,7 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorPropType, ColorSchemeName, View } from 'react-native';
+import { ColorPropType, ColorSchemeName, TouchableOpacity, View } from 'react-native';
 import { AntDesign, Entypo, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
@@ -16,6 +16,9 @@ import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { TopTabNavigator } from './TopTab';
 import ChatRoomScreen from '../screens/ChatRoomScreen'
+import ListOfUsers from '../screens/ListOfUsers';
+import { API, Auth, graphqlOperation } from 'aws-amplify';
+import { getUser } from '../src/graphql/queries';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -34,6 +37,13 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+
+  // this does not work lol
+  const toLogOut = async () => {
+    await Auth.currentAuthenticatedUser().then(user => user.signOut())
+  }
+  
+
   return (
     <Stack.Navigator screenOptions={{
       headerStyle: {
@@ -53,7 +63,9 @@ function RootNavigator() {
         headerRight: () => (
           <View style= {{flexDirection: 'row', width: 69, justifyContent: 'space-between', marginRight: 6}}> 
             <AntDesign name="search1" size={20} color="white" />
-            <Entypo name="log-out" size={15} color="white" />
+            <TouchableOpacity onPress={toLogOut}>
+            <Entypo name="log-out" size={20} color="white" />
+            </TouchableOpacity>
           </View>
         )
         
@@ -78,6 +90,8 @@ function RootNavigator() {
           </View>
         )
       })} /> 
+
+      <Stack.Screen name="ListOfUsers" component={ListOfUsers}/>
 
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>

@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import ChatListItem from '../components/ChatListItem';
 import chatRooms from '../dummyData/DummyChats';
-
+import ContactsButton from '../components/ContactsButton';
 
 export default function ChatsScreen() {
   return (
@@ -16,8 +16,9 @@ export default function ChatsScreen() {
         renderItem={( { item }) => <ChatListItem chatRoom={item} />}
         keyExtractor={ (item) => item.id}
       />
-
+      <ContactsButton /> 
     </View>
+    
       
   );
 }
