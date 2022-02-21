@@ -41,7 +41,7 @@ function App() {
      const newUser = {
        id: userInfo.attributes.sub,
        name: userInfo.username,
-       imageUri: 'https://toppng.com/uploads/preview/phone-icon-black-11549498509acfenofjly.png', 
+       imageUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRaD2U5l8Wq1og0jp9G4hau7DAUCfb9RzkyA&usqp=CAU', 
        status: 'Caller waiting in queue', 
      }
 
