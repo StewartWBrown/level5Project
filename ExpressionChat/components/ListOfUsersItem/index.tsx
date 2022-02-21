@@ -24,8 +24,9 @@ const ListOfUsersItem = (props: ListOfUsersProps) => {
     
     return (
         <TouchableWithoutFeedback onPress={onClick}>
-        <View style = {styles.container}>
-            <View style={styles.picContainer}>
+        <View style={styles.picContainer}>
+                <Image source={{ uri: user.imageUri }} style  = {styles.avatar}/>
+                <View style={styles.middleContainer}>
                 <Text style={styles.username}> {user.name}</Text>
                 </View>
             </View>
