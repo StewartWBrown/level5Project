@@ -12,6 +12,17 @@ export const createUser = /* GraphQL */ `
       name
       imageUri
       status
+      chatRooms {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
@@ -28,6 +39,17 @@ export const updateUser = /* GraphQL */ `
       name
       imageUri
       status
+      chatRooms {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
@@ -44,6 +66,197 @@ export const deleteUser = /* GraphQL */ `
       name
       imageUri
       status
+      chatRooms {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createChatRoom = /* GraphQL */ `
+  mutation CreateChatRoom(
+    $input: CreateChatRoomInput!
+    $condition: ModelChatRoomConditionInput
+  ) {
+    createChatRoom(input: $input, condition: $condition) {
+      id
+      chatUsers {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateChatRoom = /* GraphQL */ `
+  mutation UpdateChatRoom(
+    $input: UpdateChatRoomInput!
+    $condition: ModelChatRoomConditionInput
+  ) {
+    updateChatRoom(input: $input, condition: $condition) {
+      id
+      chatUsers {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteChatRoom = /* GraphQL */ `
+  mutation DeleteChatRoom(
+    $input: DeleteChatRoomInput!
+    $condition: ModelChatRoomConditionInput
+  ) {
+    deleteChatRoom(input: $input, condition: $condition) {
+      id
+      chatUsers {
+        items {
+          id
+          userID
+          chatRoomID
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createChatRoomUsers = /* GraphQL */ `
+  mutation CreateChatRoomUsers(
+    $input: CreateChatRoomUsersInput!
+    $condition: ModelChatRoomUsersConditionInput
+  ) {
+    createChatRoomUsers(input: $input, condition: $condition) {
+      id
+      userID
+      chatRoomID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatRoom {
+        id
+        chatUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateChatRoomUsers = /* GraphQL */ `
+  mutation UpdateChatRoomUsers(
+    $input: UpdateChatRoomUsersInput!
+    $condition: ModelChatRoomUsersConditionInput
+  ) {
+    updateChatRoomUsers(input: $input, condition: $condition) {
+      id
+      userID
+      chatRoomID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatRoom {
+        id
+        chatUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteChatRoomUsers = /* GraphQL */ `
+  mutation DeleteChatRoomUsers(
+    $input: DeleteChatRoomUsersInput!
+    $condition: ModelChatRoomUsersConditionInput
+  ) {
+    deleteChatRoomUsers(input: $input, condition: $condition) {
+      id
+      userID
+      chatRoomID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatRoom {
+        id
+        chatUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
       createdAt
       updatedAt
       owner

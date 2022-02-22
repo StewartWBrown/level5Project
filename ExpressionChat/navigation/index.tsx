@@ -74,7 +74,7 @@ function RootNavigator() {
       name="ChatRoom" 
       component={ChatRoomScreen} 
       options={( {route }) => ({
-        title: route.params.name,     
+        title: "Visitor",     
         // headerLeft: route.params.users[0].imageUri,
         //headerBackImageSource: route.params.users[0].imageUri,
         headerRight: () => (

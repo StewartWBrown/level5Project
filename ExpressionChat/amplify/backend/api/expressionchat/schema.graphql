@@ -3,4 +3,15 @@ type User @model @auth(rules: [{ allow: owner }]) {
   name: String!
   imageUri: String
   status: String
+  chatRooms: [ChatRoom] @manyToMany(relationName: "ChatRoomUsers")
+}
+
+# many to many relationship 
+
+type ChatRoom @model @auth(rules: [{ allow: owner }]){
+  id: ID!
+  # list of users
+  # list of messages 
+  chatUsers: [User] @manyToMany(relationName: "ChatRoomUsers")
+
 }

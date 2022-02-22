@@ -37,7 +37,16 @@
               "userPoolId": "authexpressionchatcc282538"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 365,
+                "apiKeyExpirationDate": "2023-02-22T01:49:01.802Z",
+                "description": ""
+              }
+            }
+          ]
         }
       }
     }

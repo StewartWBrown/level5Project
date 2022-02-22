@@ -12,6 +12,7 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "expressionchat": {
+            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
