@@ -40,7 +40,8 @@ function RootNavigator() {
 
   // this does not work lol
   const toLogOut = async () => {
-    await Auth.currentAuthenticatedUser().then(user => user.signOut())
+    const currentUser = await Auth.currentAuthenticatedUser()
+    Auth.signOut(currentUser)
   }
   
 
