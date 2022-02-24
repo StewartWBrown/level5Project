@@ -11,6 +11,7 @@ const ChatRoomScreen = () => {
     const route = useRoute() ;
     
     
+    
     return (
         <>
         <FlatList 
@@ -19,7 +20,7 @@ const ChatRoomScreen = () => {
         <ChatMessage message={item} />} 
         inverted 
         />
-        <ChatInput />
+        <ChatInput chatRoomID={route.params.id}/>
         </>
         );
 

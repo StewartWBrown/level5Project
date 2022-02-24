@@ -89,6 +89,18 @@ export const onCreateChatRoom = /* GraphQL */ `
         }
         nextToken
       }
+      messages {
+        items {
+          id
+          content
+          createdAt
+          userID
+          chatID
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
@@ -105,6 +117,18 @@ export const onUpdateChatRoom = /* GraphQL */ `
           userID
           chatRoomID
           createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      messages {
+        items {
+          id
+          content
+          createdAt
+          userID
+          chatID
           updatedAt
           owner
         }
@@ -131,7 +155,94 @@ export const onDeleteChatRoom = /* GraphQL */ `
         }
         nextToken
       }
+      messages {
+        items {
+          id
+          content
+          createdAt
+          userID
+          chatID
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateMessage = /* GraphQL */ `
+  subscription OnCreateMessage($owner: String) {
+    onCreateMessage(owner: $owner) {
+      id
+      content
+      createdAt
+      userID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatID
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateMessage = /* GraphQL */ `
+  subscription OnUpdateMessage($owner: String) {
+    onUpdateMessage(owner: $owner) {
+      id
+      content
+      createdAt
+      userID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatID
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteMessage = /* GraphQL */ `
+  subscription OnDeleteMessage($owner: String) {
+    onDeleteMessage(owner: $owner) {
+      id
+      content
+      createdAt
+      userID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatID
       updatedAt
       owner
     }
@@ -158,6 +269,9 @@ export const onCreateChatRoomUsers = /* GraphQL */ `
       chatRoom {
         id
         chatUsers {
+          nextToken
+        }
+        messages {
           nextToken
         }
         createdAt
@@ -193,6 +307,9 @@ export const onUpdateChatRoomUsers = /* GraphQL */ `
         chatUsers {
           nextToken
         }
+        messages {
+          nextToken
+        }
         createdAt
         updatedAt
         owner
@@ -224,6 +341,9 @@ export const onDeleteChatRoomUsers = /* GraphQL */ `
       chatRoom {
         id
         chatUsers {
+          nextToken
+        }
+        messages {
           nextToken
         }
         createdAt

@@ -11,7 +11,17 @@ type User @model @auth(rules: [{ allow: owner }]) {
 type ChatRoom @model @auth(rules: [{ allow: owner }]){
   id: ID!
   # list of users
-  # list of messages 
   chatUsers: [User] @manyToMany(relationName: "ChatRoomUsers")
+  # list of messages 
+  messages: [Message] @hasMany(indexName: "byChatRoom", fields: ["id"])
+}
 
+type Message 
+@model @auth(rules: [{ allow: owner }]){
+  id: ID!
+  content: String! 
+  createdAt: String!
+  userID: ID! 
+  user: User @hasOne(fields: ["userID"])
+  chatID: ID! @index(name:"byChatRoom", sortKeyFields: ["createdAt"], queryField: "messagesByChatRoom")
 }

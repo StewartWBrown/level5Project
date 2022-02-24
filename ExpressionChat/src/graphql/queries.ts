@@ -64,6 +64,18 @@ export const getChatRoom = /* GraphQL */ `
         }
         nextToken
       }
+      messages {
+        items {
+          id
+          content
+          createdAt
+          userID
+          chatID
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
@@ -82,7 +94,64 @@ export const listChatRooms = /* GraphQL */ `
         chatUsers {
           nextToken
         }
+        messages {
+          nextToken
+        }
         createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getMessage = /* GraphQL */ `
+  query GetMessage($id: ID!) {
+    getMessage(id: $id) {
+      id
+      content
+      createdAt
+      userID
+      user {
+        id
+        name
+        imageUri
+        status
+        chatRooms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      chatID
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listMessages = /* GraphQL */ `
+  query ListMessages(
+    $filter: ModelMessageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        content
+        createdAt
+        userID
+        user {
+          id
+          name
+          imageUri
+          status
+          createdAt
+          updatedAt
+          owner
+        }
+        chatID
         updatedAt
         owner
       }
@@ -111,6 +180,9 @@ export const getChatRoomUsers = /* GraphQL */ `
       chatRoom {
         id
         chatUsers {
+          nextToken
+        }
+        messages {
           nextToken
         }
         createdAt
@@ -150,6 +222,45 @@ export const listChatRoomUsers = /* GraphQL */ `
           owner
         }
         createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const messagesByChatRoom = /* GraphQL */ `
+  query MessagesByChatRoom(
+    $chatID: ID!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelMessageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    messagesByChatRoom(
+      chatID: $chatID
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        content
+        createdAt
+        userID
+        user {
+          id
+          name
+          imageUri
+          status
+          createdAt
+          updatedAt
+          owner
+        }
+        chatID
         updatedAt
         owner
       }
