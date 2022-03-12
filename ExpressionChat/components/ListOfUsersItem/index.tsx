@@ -32,7 +32,7 @@ const ListOfUsersItem = (props: ListOfUsersProps) => {
                 console.log("Error creating chat room");
                 return ;
             }
-
+            
             const newChatRoom = newChatRoomData.data.createChatRoom;
 
             // add user to the chat

@@ -7,14 +7,14 @@ import {
     Auth, 
     graphqlOperation,
 } from 'aws-amplify';
-import { createMessage  } from "../../src/graphql/mutations";
+import { createMessage, updateChatRoom  } from "../../src/graphql/mutations";
 
 
 const ChatInput = (props) => {
     const { chatRoomID } = props; 
 
     const [message, setMessage] = useState('');
-    const [myUserId, setMyUserId] = useState(null)
+    const [myUserId, setMyUserId] = useState(null);
 
     useEffect(() => {
         const getUser  = async () => {
@@ -24,9 +24,25 @@ const ChatInput = (props) => {
         getUser();
     }, [])
 
+    const updateLastMessage = async (messageId: string) => {
+        try{
+            await API.graphql(
+                graphqlOperation(
+                    updateChatRoom, {
+                        input: { id: chatRoomID, lastMessageID: messageId,}
+                    }
+                )
+            );
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
     const onSendPress = async () => {
         try {
-            await API.graphql(
+            const newMessage = await API.graphql(
                 graphqlOperation(
                     createMessage, {
                         input:{
@@ -38,7 +54,7 @@ const ChatInput = (props) => {
                     }
                 )
             )
-
+            await updateLastMessage(newMessage.data.createMessage.id)
         } catch (e){
             console.log(e);
         }

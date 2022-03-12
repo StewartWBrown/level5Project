@@ -13,8 +13,6 @@ import { getUser } from './queries';
 export default function ChatsScreen() {
 
     const [ chatRooms, setChatRooms ] = useState([]);
-
-    
     useEffect( () => {
       const fetchChatRooms = async () => {
         try{
@@ -22,11 +20,7 @@ export default function ChatsScreen() {
           const userData = await API.graphql(
             graphqlOperation(getUser, {id: userInfo.attributes.sub})
           )
-          // userData.data.getUser.chatRooms.items.chatRoom.chatUsers.items
           setChatRooms(userData.data.getUser.chatRooms.items)
-          console.log("USER DATA")
-          console.log(userData.data.getUser.chatRooms.items)
-          //console.log(userData.data.getUser.chatRooms.items)
         }catch (e) {
           console.log(e)
         }

@@ -48,7 +48,7 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{
       headerStyle: {
-        backgroundColor: Colors.light.tint,
+        backgroundColor: '#1c3f89',
       },
       headerShadowVisible: false,
       headerTintColor: Colors.light.background,

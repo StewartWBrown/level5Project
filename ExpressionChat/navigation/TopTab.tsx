@@ -26,7 +26,7 @@ import { TopTabParamList, RootTabScreenProps } from '../types';
        screenOptions={{
          tabBarActiveTintColor: Colors[colorScheme].background,
          tabBarStyle: {
-           backgroundColor: Colors[colorScheme].tint,
+           backgroundColor: '#1c3f89',
          },
          tabBarIndicatorStyle:{
            backgroundColor: Colors[colorScheme].background,
@@ -37,31 +37,11 @@ import { TopTabParamList, RootTabScreenProps } from '../types';
          },
          tabBarShowIcon: true,
        }}>
-      <TopTabs.Screen
-         name="Camera"
-         component={TabTwoScreen}
-         options={{
-           tabBarIcon: ({ color: string }) => <FontAwesome name="camera" color="white" size={17}/>,
-           tabBarShowLabel: false,
-           
-         }} />
        <TopTabs.Screen
          name="Chats"
          component={ChatsScreen}
          options={{
            title: 'CHATS',
-         }} />
-        <TopTabs.Screen
-         name="Status"
-         component={TabTwoScreen}
-         options={{
-           title: 'STATUS',
-         }} />
-        <TopTabs.Screen
-         name="Calls"
-         component={TabTwoScreen}
-         options={{
-           title: 'CALLS',
          }} />
      </TopTabs.Navigator>
    );
