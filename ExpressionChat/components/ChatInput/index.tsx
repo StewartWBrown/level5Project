@@ -54,18 +54,19 @@ const ChatInput = (props) => {
                     }
                 )
             )
-            await updateLastMessage(newMessage.data.createMessage.id)
+            await updateLastMessage(newMessage.data.createMessage.id);
+            setMessage('');
         } catch (e){
             console.log(e);
         }
-        setMessage('');
+        
     }
 
     return(
         <View style={styles.container}>
             <View style={styles.mainContainer}>
             <FontAwesome5 name="laugh-beam" size={25} color="grey" />
-            <TextInput style={styles.textInput} placeholder={"Type a message..."} multiline numberOfLines={2} onChangeText= {setMessage} />
+            <TextInput style={styles.textInput} placeholder={"Type a message..."} multiline numberOfLines={2} value = {message} onChangeText= {setMessage} />
             <Entypo name="attachment" size={25} color="grey" style={styles.icons}/>
             {!message && <Fontisto name="camera" size={24} color="grey" style={styles.icons}/>}
             </View>

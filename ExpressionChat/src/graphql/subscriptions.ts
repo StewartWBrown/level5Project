@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser($owner: String) {
-    onCreateUser(owner: $owner) {
+  subscription OnCreateUser {
+    onCreateUser {
       id
       name
       imageUri
@@ -16,19 +16,17 @@ export const onCreateUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser($owner: String) {
-    onUpdateUser(owner: $owner) {
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
       name
       imageUri
@@ -40,19 +38,17 @@ export const onUpdateUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser($owner: String) {
-    onDeleteUser(owner: $owner) {
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
       name
       imageUri
@@ -64,19 +60,17 @@ export const onDeleteUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateChatRoom = /* GraphQL */ `
-  subscription OnCreateChatRoom($owner: String) {
-    onCreateChatRoom(owner: $owner) {
+  subscription OnCreateChatRoom {
+    onCreateChatRoom {
       id
       chatUsers {
         items {
@@ -85,7 +79,6 @@ export const onCreateChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -97,7 +90,6 @@ export const onCreateChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -114,21 +106,18 @@ export const onCreateChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateChatRoom = /* GraphQL */ `
-  subscription OnUpdateChatRoom($owner: String) {
-    onUpdateChatRoom(owner: $owner) {
+  subscription OnUpdateChatRoom {
+    onUpdateChatRoom {
       id
       chatUsers {
         items {
@@ -137,7 +126,6 @@ export const onUpdateChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -149,7 +137,6 @@ export const onUpdateChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -166,21 +153,18 @@ export const onUpdateChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteChatRoom = /* GraphQL */ `
-  subscription OnDeleteChatRoom($owner: String) {
-    onDeleteChatRoom(owner: $owner) {
+  subscription OnDeleteChatRoom {
+    onDeleteChatRoom {
       id
       chatUsers {
         items {
@@ -189,7 +173,6 @@ export const onDeleteChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -201,7 +184,6 @@ export const onDeleteChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -218,21 +200,18 @@ export const onDeleteChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateMessage = /* GraphQL */ `
-  subscription OnCreateMessage($owner: String) {
-    onCreateMessage(owner: $owner) {
+  subscription OnCreateMessage {
+    onCreateMessage {
       id
       content
       createdAt
@@ -247,17 +226,15 @@ export const onCreateMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateMessage = /* GraphQL */ `
-  subscription OnUpdateMessage($owner: String) {
-    onUpdateMessage(owner: $owner) {
+  subscription OnUpdateMessage {
+    onUpdateMessage {
       id
       content
       createdAt
@@ -272,17 +249,15 @@ export const onUpdateMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteMessage = /* GraphQL */ `
-  subscription OnDeleteMessage($owner: String) {
-    onDeleteMessage(owner: $owner) {
+  subscription OnDeleteMessage {
+    onDeleteMessage {
       id
       content
       createdAt
@@ -297,17 +272,15 @@ export const onDeleteMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateChatRoomUsers = /* GraphQL */ `
-  subscription OnCreateChatRoomUsers($owner: String) {
-    onCreateChatRoomUsers(owner: $owner) {
+  subscription OnCreateChatRoomUsers {
+    onCreateChatRoomUsers {
       id
       userID
       chatRoomID
@@ -321,7 +294,6 @@ export const onCreateChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -339,21 +311,18 @@ export const onCreateChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateChatRoomUsers = /* GraphQL */ `
-  subscription OnUpdateChatRoomUsers($owner: String) {
-    onUpdateChatRoomUsers(owner: $owner) {
+  subscription OnUpdateChatRoomUsers {
+    onUpdateChatRoomUsers {
       id
       userID
       chatRoomID
@@ -367,7 +336,6 @@ export const onUpdateChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -385,21 +353,18 @@ export const onUpdateChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteChatRoomUsers = /* GraphQL */ `
-  subscription OnDeleteChatRoomUsers($owner: String) {
-    onDeleteChatRoomUsers(owner: $owner) {
+  subscription OnDeleteChatRoomUsers {
+    onDeleteChatRoomUsers {
       id
       userID
       chatRoomID
@@ -413,7 +378,6 @@ export const onDeleteChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -431,15 +395,12 @@ export const onDeleteChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;

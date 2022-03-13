@@ -19,13 +19,11 @@ export const createUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -46,13 +44,11 @@ export const updateUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -73,13 +69,11 @@ export const deleteUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -97,7 +91,6 @@ export const createChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -109,7 +102,6 @@ export const createChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -126,15 +118,12 @@ export const createChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -152,7 +141,6 @@ export const updateChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -164,7 +152,6 @@ export const updateChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -181,15 +168,12 @@ export const updateChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -207,7 +191,6 @@ export const deleteChatRoom = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -219,7 +202,6 @@ export const deleteChatRoom = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         nextToken
       }
@@ -236,15 +218,12 @@ export const deleteChatRoom = /* GraphQL */ `
           status
           createdAt
           updatedAt
-          owner
         }
         chatID
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -268,11 +247,9 @@ export const createMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
@@ -296,11 +273,9 @@ export const updateMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
@@ -324,11 +299,9 @@ export const deleteMessage = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatID
       updatedAt
-      owner
     }
   }
 `;
@@ -351,7 +324,6 @@ export const createChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -369,15 +341,12 @@ export const createChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -400,7 +369,6 @@ export const updateChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -418,15 +386,12 @@ export const updateChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -449,7 +414,6 @@ export const deleteChatRoomUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       chatRoom {
         id
@@ -467,15 +431,12 @@ export const deleteChatRoomUsers = /* GraphQL */ `
           userID
           chatID
           updatedAt
-          owner
         }
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;

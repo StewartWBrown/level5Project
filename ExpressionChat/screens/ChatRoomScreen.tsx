@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, ImageBackground, ImageBackgroundBase, Text } from 'react-native';
-import dummyChatData from '../dummyData/DummyChatSample';
+import { FlatList } from 'react-native';
 
 import { useRoute } from "@react-navigation/native";
 import ChatMessage from "../components/ChatMessage";
 import ChatInput from "../components/ChatInput";
+import { onCreateMessage } from "../src/graphql/subscriptions";
 
 import {
     API, 
@@ -43,6 +43,23 @@ const ChatRoomScreen = () => {
         }
         getMyID();
     }, [])
+
+    useEffect( () => {
+        const subscription = API.graphql(
+            graphqlOperation(onCreateMessage)
+        ).subscribe({
+            next: (data) => {
+                const newMessage = data.value.data.onCreateMessage;
+
+                if (newMessage.chatID !== route.params.id) {
+                    return
+                }
+                setMessages([newMessage, ...messages]);
+            }
+        }); 
+
+        return () => subscription.unsubscribe();
+    }, [messages])
 
     return (
         <>

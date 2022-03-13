@@ -20,7 +20,7 @@ export default function ListOfUsers() {
                 )
                 setUsers(usersData.data.listUsers.items);
             } catch (e) {
-                console.log();
+                console.log(e);
             }
         }
         getUsers();

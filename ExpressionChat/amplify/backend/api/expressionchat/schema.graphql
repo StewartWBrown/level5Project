@@ -1,4 +1,5 @@
-type User @model @auth(rules: [{ allow: owner }]) {
+
+type User @model @auth(rules: [{ allow: private, operations: [read, create, update, delete] }]) {
   id: ID!
   name: String!
   imageUri: String
@@ -8,7 +9,7 @@ type User @model @auth(rules: [{ allow: owner }]) {
 
 # many to many relationship 
 
-type ChatRoom @model @auth(rules: [{ allow: owner }]){
+type ChatRoom @model @auth(rules: [{ allow: private, operations: [read, create, update, delete] }]){
   id: ID!
   # list of users
   chatUsers: [User] @manyToMany(relationName: "ChatRoomUsers")
@@ -19,7 +20,7 @@ type ChatRoom @model @auth(rules: [{ allow: owner }]){
 }
 
 type Message 
-@model @auth(rules: [{ allow: owner }]){
+@model @auth(rules: [{ allow: private, operations: [read, create, update, delete] }]){
   id: ID!
   content: String! 
   createdAt: String!

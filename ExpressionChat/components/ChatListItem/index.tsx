@@ -6,7 +6,6 @@ import { useNavigation } from "@react-navigation/native";
 
 
 import styles from "./style";
-import { Auth } from "aws-amplify";
 
 
 export type ChatListItemProps = {
@@ -18,7 +17,7 @@ const ChatListItem = (props: ChatListItemProps) => {
 
     //const user = chatRoom.chatUsers.items[1];
 
-    const user = chatRoom.chatUsers.items[1].user;
+    const user = chatRoom.chatUsers.items[0].user;
 
     const navigation = useNavigation();
 

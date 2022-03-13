@@ -12,7 +12,6 @@ export const getUser = /* GraphQL */ `
           chatRoomID
           createdAt
           updatedAt
-          owner
           chatRoom {
             id
                 chatUsers {
@@ -41,7 +40,6 @@ export const getUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
