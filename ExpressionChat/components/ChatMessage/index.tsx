@@ -7,6 +7,7 @@ import styles from "./styles";
 export type ChatMessageProps = {
     message: Message;
     usersID: string,
+    colour: String,
 }
 
 
@@ -21,7 +22,7 @@ const ChatMessage = (props: ChatMessageProps) => {
         <View style={styles.container}> 
             <View style={[
                 styles.messageBox,
-                {backgroundColor: messageSent() ? '#DCF8C5' : 'white',
+                {backgroundColor: message.colour,
                 marginLeft: messageSent() ? 50 : 0,
                 marginRight: messageSent() ? 0 : 50}
             ]}>

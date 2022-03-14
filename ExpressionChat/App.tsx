@@ -19,10 +19,12 @@ import { withAuthenticator } from 'aws-amplify-react-native'
 import Amplify from 'aws-amplify'
 import { useEffect } from 'react';
 import { UserInterfaceIdiom } from 'expo-constants';
-
+import { MenuProvider } from 'react-native-popup-menu';
 Amplify.configure(config)
 
+
 function App() {
+  
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
   useEffect( () => {
@@ -61,12 +63,16 @@ function App() {
     return null;
   } else {
     return (
+      <MenuProvider>
       <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
       </SafeAreaProvider>
+      </MenuProvider>
     );
+  
   }
+
 }
 
 export default withAuthenticator(App)

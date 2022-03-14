@@ -25,6 +25,8 @@ type Message
   content: String! 
   createdAt: String!
   userID: ID! 
+  colour: String
+  facialExpression: String
   user: User @hasOne(fields: ["userID"])
   chatID: ID! @index(name:"byChatRoom", sortKeyFields: ["createdAt"], queryField: "messagesByChatRoom")
 }

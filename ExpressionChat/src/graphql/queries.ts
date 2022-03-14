@@ -66,6 +66,8 @@ export const getChatRoom = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -77,6 +79,8 @@ export const getChatRoom = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name
@@ -114,6 +118,8 @@ export const listChatRooms = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -131,6 +137,8 @@ export const getMessage = /* GraphQL */ `
       content
       createdAt
       userID
+      colour
+      facialExpression
       user {
         id
         name
@@ -159,6 +167,8 @@ export const listMessages = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name
@@ -205,6 +215,8 @@ export const getChatRoomUsers = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -270,6 +282,8 @@ export const messagesByChatRoom = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name

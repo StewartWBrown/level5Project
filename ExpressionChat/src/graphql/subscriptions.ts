@@ -88,6 +88,8 @@ export const onCreateChatRoom = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -99,6 +101,8 @@ export const onCreateChatRoom = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name
@@ -135,6 +139,8 @@ export const onUpdateChatRoom = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -146,6 +152,8 @@ export const onUpdateChatRoom = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name
@@ -182,6 +190,8 @@ export const onDeleteChatRoom = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -193,6 +203,8 @@ export const onDeleteChatRoom = /* GraphQL */ `
         content
         createdAt
         userID
+        colour
+        facialExpression
         user {
           id
           name
@@ -216,6 +228,8 @@ export const onCreateMessage = /* GraphQL */ `
       content
       createdAt
       userID
+      colour
+      facialExpression
       user {
         id
         name
@@ -239,6 +253,8 @@ export const onUpdateMessage = /* GraphQL */ `
       content
       createdAt
       userID
+      colour
+      facialExpression
       user {
         id
         name
@@ -262,6 +278,8 @@ export const onDeleteMessage = /* GraphQL */ `
       content
       createdAt
       userID
+      colour
+      facialExpression
       user {
         id
         name
@@ -309,6 +327,8 @@ export const onCreateChatRoomUsers = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -351,6 +371,8 @@ export const onUpdateChatRoomUsers = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }
@@ -393,6 +415,8 @@ export const onDeleteChatRoomUsers = /* GraphQL */ `
           content
           createdAt
           userID
+          colour
+          facialExpression
           chatID
           updatedAt
         }

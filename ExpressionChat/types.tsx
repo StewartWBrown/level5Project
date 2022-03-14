@@ -50,6 +50,8 @@ export type Message = {
   content: string;
   timestamp: string; 
   user: User;
+  colour: string;
+  facialExpression: string;
 }
 
 export type ChatRoom = {
