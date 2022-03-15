@@ -22,7 +22,8 @@ const ChatInput = (props) => {
 
     const [message, setMessage] = useState('');
     const [myUserId, setMyUserId] = useState(null);
-    var messageColour:string = "white"
+    var messageColour:string = "white";
+    var facialExpression:string = "nothing";
 
     useEffect(() => {
         const getUser  = async () => {
@@ -59,6 +60,7 @@ const ChatInput = (props) => {
                             userID: myUserId,
                             chatID: chatRoomID,
                             colour: messageColour,
+                            facialExpression: facialExpression,
                         }
                     }
                 )
@@ -72,8 +74,13 @@ const ChatInput = (props) => {
     }
 
     const changeMessageColour = (colour) =>{
-        messageColour = colour
-        alert("Changed colour to " + colour)
+        messageColour = colour;
+        alert("Changed colour to " + colour);
+    }
+    
+    const changeFacialExpression = (face) =>{
+        facialExpression = face;
+        alert("Changed facial expression to " + face);
     }
 
     return(
@@ -82,12 +89,12 @@ const ChatInput = (props) => {
             <Menu>
             <MenuTrigger text='DEV' triggerOnLongPress={true}/>
             <MenuOptions>
-                <MenuOption onSelect={() => alert(`Save`)} text='f1' />
-                <MenuOption onSelect={() => alert(`Save`)} text='f2' />
-                <MenuOption onSelect={() => alert(`Save`)} text='f3' />
-                <MenuOption onSelect={() => alert(`Save`)} text='f4' />
-                <MenuOption onSelect={() => alert(`Save`)} text='f5' />
-                <MenuOption onSelect={() => alert(`Save`)} text='f6' />
+                <MenuOption onSelect={() => changeFacialExpression(`happy`)} text='happy' />
+                <MenuOption onSelect={() => changeFacialExpression(`sad`)} text='sad' />
+                <MenuOption onSelect={() => changeFacialExpression(`fear`)} text='fear' />
+                <MenuOption onSelect={() => changeFacialExpression(`anger`)} text='anger' />
+                <MenuOption onSelect={() => changeFacialExpression(`surprise`)} text='surprise' />
+                <MenuOption onSelect={() => changeFacialExpression(`disgust`)} text='disgust' />
                 <MenuOption onSelect={() => 
                     changeMessageColour('blue')} >
                 <Text style={{color: 'blue'}}>blue</Text>
