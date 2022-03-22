@@ -48,7 +48,7 @@ export type User = {
 export type Message = {
   id: string; 
   content: string;
-  timestamp: string; 
+  createdAt: string; 
   user: User;
   colour: string;
   facialExpression: string;

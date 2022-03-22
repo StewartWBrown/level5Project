@@ -13,8 +13,8 @@ export type ChatMessageProps = {
 
 
 const ChatMessage = (props: ChatMessageProps) => {
+    
     const { message, usersID } = props; 
-
     const messageSent = () => {
         return message.user.id === usersID;
     }
@@ -22,7 +22,7 @@ const ChatMessage = (props: ChatMessageProps) => {
     return (
         <View style={styles.container}> 
             
-               <Image style ={styles.tinyFace} source={require('../../assets/images/' + message.facialExpression + '.png')} />
+               {message.facialExpression != 'nothing' ? <Image style ={styles.tinyFace} source={require('../../assets/images/' + message.facialExpression + '.png')} />: null}
         
             <View style={[
                 styles.messageBox,
@@ -33,9 +33,10 @@ const ChatMessage = (props: ChatMessageProps) => {
                 {!messageSent() && <Text style={styles.name}> {message.user.name} </Text>}
 
                 <Text style={{color: message.colour == "#112ccf" ? "white" : "black"}}> {message.content} </Text> 
-                <Text style={styles.timestamp}> {moment(message.timestamp).fromNow()}</Text>
+                <Text style={styles.timestamp}> {moment(message.createdAt).fromNow()}</Text>
             </View>
         </View>
+        
     )
 }
 

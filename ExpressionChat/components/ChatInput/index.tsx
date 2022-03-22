@@ -15,6 +15,7 @@ import {
     MenuTrigger,
   } from 'react-native-popup-menu';
 import { createMessage, updateChatRoom  } from "../../src/graphql/mutations";
+import moment from "moment";
 
 
 const ChatInput = (props) => {
@@ -52,6 +53,9 @@ const ChatInput = (props) => {
 
     const onSendPress = async () => {
         try {
+            if(message == ''){
+                return;
+            }
             const newMessage = await API.graphql(
                 graphqlOperation(
                     createMessage, {
