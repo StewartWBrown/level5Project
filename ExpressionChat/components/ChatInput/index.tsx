@@ -87,7 +87,7 @@ const ChatInput = (props) => {
         <View style={styles.container}>
             <View style={styles.mainContainer}>
             <Menu>
-            <MenuTrigger text='DEV' triggerOnLongPress={true}/>
+            <MenuTrigger text='   ' triggerOnLongPress={true}/>
             <MenuOptions>
                 <MenuOption onSelect={() => changeFacialExpression(`happy`)} text='happy' />
                 <MenuOption onSelect={() => changeFacialExpression(`sad`)} text='sad' />
@@ -96,13 +96,24 @@ const ChatInput = (props) => {
                 <MenuOption onSelect={() => changeFacialExpression(`surprise`)} text='surprise' />
                 <MenuOption onSelect={() => changeFacialExpression(`disgust`)} text='disgust' />
                 <MenuOption onSelect={() => 
-                    changeMessageColour('blue')} >
-                <Text style={{color: 'blue'}}>blue</Text>
+                    changeMessageColour('#112ccf')} >
+                <Text style={{color: '#112ccf'}}>(1) Dark blue</Text>
                 </MenuOption>
 
                 <MenuOption onSelect={() => 
-                    changeMessageColour('red')} >
-                <Text style={{color: 'red'}}>red</Text>
+                    changeMessageColour('#17dafc')} >
+                <Text style={{color: '#17dafc'}}>(2) Light Blue</Text>
+                </MenuOption>
+
+                <MenuOption onSelect={() => 
+                    changeMessageColour('#e06519')} >
+                <Text style={{color: '#e06519'}}>(3) Orange</Text>
+                </MenuOption>
+
+
+                <MenuOption onSelect={() => 
+                    changeMessageColour('#ed0707')} >
+                <Text style={{color: '#ed0707'}}>(4) Red</Text>
                 </MenuOption>
                 <MenuOption onSelect={() => alert(`Not called`)} disabled={true} text='Disabled' />
             </MenuOptions>

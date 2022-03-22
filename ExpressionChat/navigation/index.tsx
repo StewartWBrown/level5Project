@@ -18,7 +18,6 @@ import { TopTabNavigator } from './TopTab';
 import ChatRoomScreen from '../screens/ChatRoomScreen'
 import ListOfUsers from '../screens/ListOfUsers';
 import { API, Auth, graphqlOperation } from 'aws-amplify';
-import { getUser } from '../src/graphql/queries';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -38,7 +37,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
 
-  // this does not work lol
   const toLogOut = async () => {
     const currentUser = await Auth.currentAuthenticatedUser()
     Auth.signOut(currentUser)

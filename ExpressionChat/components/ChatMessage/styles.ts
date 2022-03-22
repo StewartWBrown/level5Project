@@ -13,25 +13,14 @@ const styles = StyleSheet.create({
     },
 
     tinyFace: {
-        width: 50,
-        height: 50,
+        width: 100,
+        height: 100,
       },
 
     name: {
         color: Colors.light.tint,
         fontWeight: "bold",
         marginBottom: 5,
-    },
-    faceContainer: {
-
-        backgroundColor: '#2f549e',
-        borderRadius: 50,
-        width: 40, 
-        height: 60, 
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginHorizontal: 10
-
     },
 
     message: {
